@@ -1,0 +1,187 @@
+* { 
+    margin: 0;
+    padding: 0;
+}
+/* -------DECLARAÇÃO DE VARIAVEIS GLOBAIS------ */
+:root {
+    --cor-primaria: #111320; /*Background*/
+    --cor-secundaria: #F6F6F6; /*Textos principais*/
+    --cor-terciarias: #f3722c; /*Destaques*/
+    --cor-footer: black;  /*Footer*/
+
+    --fonte-primaria:'Inconsolata', monospace;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    overflow-x: hidden;
+}
+
+/*---------HEADER------- */
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+header a {
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    position: relative;
+    justify-content: center;
+    padding: 1%;
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-family: var(--fonte-primaria);
+    display: inline;
+}
+header a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--cor-terciarias);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+header a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+  
+  /*------MAIN------- */
+  
+  .apresentacao{
+     padding: 5% 10% 0% 10% ;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 82px;
+    }
+    
+    /*--------FOTO DE PERFIL------ */
+  
+    #foto_perfil {
+        width: 50%;
+    }
+    
+    /*------SECTION 1------- */
+    
+    .apresentacao__conteudo{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .apresentacao__conteudo__titulo{
+        font-size: 3.5rem;
+        font-family: var(--fonte-primaria);
+    }
+    #destaque_nome {
+        font-size: 3.5rem;
+        font-family: var(--fonte-primaria);
+    }
+    .nome{
+        color: #22D4FD;
+    }
+    .enfeite {
+        color: var(--cor-terciarias);
+}
+
+#profession {
+    font-size: 2.18rem;
+    color: var(--cor-terciarias);
+    font-family: var(--fonte-primaria);
+}
+
+/* TEXTO PRINCIPAL DO ASIDE */
+
+.apresentacao__conteudo__texto{
+    font-size: 1.5rem;
+    font-family: var(--fonte-primaria);
+}
+
+/*--------BOTOES DE REDES SOCIAIS------ */
+
+.social_midia {
+    display: flex;
+    justify-content:center;
+    width: 50%;
+    margin-left: 25%;
+    gap: 16px;
+    text-decoration: none;
+}
+#social_img {
+    width: 70px;
+}
+
+/*animação dos botoes de redes sociais*/
+
+@keyframes animation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.10);
+    }
+}
+
+.apresentacao__conteudo img:hover {
+    animation-name: animation;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+/*--------FOOTER------ */
+footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    width: 100%;
+    font-family: var(--fonte-primaria);
+    font-size: 1.25rem;
+    background: var(--cor-footer);
+    opacity: 0.6;
+    font-style: italic;
+}
+
+@media (max-width: 1200px) {
+    body {
+        overflow-x: hidden;
+        gap: 20px;
+    }
+    nav {
+        padding-top: 2.0rem;
+    }
+    #foto_perfil {
+        width: 90%;
+    }
+    .apresentacao {
+        flex-direction: column;
+        padding: 5%;
+    }
+    .apresentacao__conteudo {
+        width: auto;
+    }
+    footer {
+        position: relative;
+        bottom: auto;
+    }
+    
+}
